@@ -43,7 +43,7 @@ def detect_video(device, weight, input_video, output_video=None):
 
 def detect_image(device, weight, image_path, output_image):
     # load model
-    model = Yolov5Onnx(classes="class_list",
+    model = Yolov5Onnx(classes=["nickel", "dime", "quarter", "penny", "paper"],
                        backend="onnx",
                        weight=weight,
                        device=device)
