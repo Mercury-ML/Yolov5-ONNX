@@ -43,7 +43,7 @@ def detect_video(device, weight, input_video, output_video=None):
 
 def detect_image(device, weight, image_path, output_image):
     # load model
-    model = Yolov5Onnx(classes="coco",
+    model = Yolov5Onnx(classes="class_list",
                        backend="onnx",
                        weight=weight,
                        device=device)
@@ -78,6 +78,11 @@ if __name__ == "__main__":
                         type=str,
                         default='people_out.mp4',
                         help='name of output video or image file')
+    
+    parser.add_argument('--class_list',
+                        type=list,
+                        default='class_list',
+                        help='name of yaml file, yaml should contain a list called Classes with a capital C')
 
     parser.add_argument('--device', type=str, default='cpu', help='cpu or gpu')
 
