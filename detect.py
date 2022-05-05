@@ -53,6 +53,7 @@ def detect_image(device, weight, image_path, output_image):
 
     # inference
     preds = model(image)
+    print(type(preds))
     print(preds)
 
     # draw image
